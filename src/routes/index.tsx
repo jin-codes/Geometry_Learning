@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Ten chapters, every core theorem and formula, rendered with KaTeX. A clean, dark-mode study reference for 10th-grade Geometry.",
+          "The full 10th-grade Geometry curriculum, distilled. Ten chapters, every core theorem and formula, rendered with KaTeX in a dark study reference.",
       },
     ],
   }),
