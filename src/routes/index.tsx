@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { chapters } from "@/data/chapters";
 import { TeX } from "@/components/TeX";
 import { interactives } from "@/components/Interactives";
+import { diagrams } from "@/components/Diagrams";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -183,58 +184,78 @@ function Index() {
                 </div>
 
                 <div className="space-y-6">
-                  {c.topics.map((t) => (
-                    <article
-                      key={t.title}
-                      className="rounded-xl border border-border bg-card/50 p-6 sm:p-8"
-                    >
-                      <h3
-                        className={`text-xl font-semibold tracking-tight ${accentClass[c.accent]}`}
+                  {c.topics.map((t) => {
+                    const Diagram = t.diagram ? diagrams[t.diagram] : undefined;
+                    return (
+                      <article
+                        key={t.title}
+                        className="rounded-xl border border-border bg-card/50 p-6 sm:p-8"
                       >
-                        {t.title}
-                      </h3>
-                      <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-                        {t.body}
-                      </p>
-
-                      {t.formulas && t.formulas.length > 0 && (
-                        <div className="mt-6">
-                          <div className="mb-3 flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-                            <span>▤</span> Key Formulas
-                          </div>
-                          <div className="space-y-3 rounded-lg border border-border/60 bg-background/40 px-5 py-5">
-                            {t.formulas.map((f, i) => (
-                              <div key={i} className="overflow-x-auto text-lg">
-                                <TeX math={f} block />
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {t.examples?.map((ex, i) => (
                         <div
-                          key={i}
-                          className="mt-6 rounded-lg border border-border/60 bg-background/40 p-5"
+                          className={
+                            t.diagram
+                              ? "grid items-center gap-6 md:grid-cols-[1fr_20rem]"
+                              : undefined
+                          }
                         >
-                          <div className="mb-3 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-                            ◇ Example {i + 1}
+                          <div>
+                            <h3
+                              className={`text-xl font-semibold tracking-tight ${accentClass[c.accent]}`}
+                            >
+                              {t.title}
+                            </h3>
+                            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+                              {t.body}
+                            </p>
                           </div>
-                          <div className="text-sm">
-                            <span className="text-muted-foreground">Problem:</span>{" "}
-                            <span className="text-foreground">{ex.problem}</span>
-                          </div>
-                          <ol className="mt-3 list-inside list-decimal space-y-1.5 text-sm text-foreground/90">
-                            {ex.steps.map((s, j) => (
-                              <li key={j}>
-                                <TeX math={s} />
-                              </li>
-                            ))}
-                          </ol>
+                          {Diagram && (
+                            <figure
+                              className={`rounded-lg border border-border/60 bg-background/40 p-3 ${accentClass[c.accent]}`}
+                            >
+                              <Diagram />
+                            </figure>
+                          )}
                         </div>
-                      ))}
-                    </article>
-                  ))}
+
+                        {t.formulas && t.formulas.length > 0 && (
+                          <div className="mt-6">
+                            <div className="mb-3 flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+                              <span>▤</span> Key Formulas
+                            </div>
+                            <div className="space-y-3 rounded-lg border border-border/60 bg-background/40 px-5 py-5">
+                              {t.formulas.map((f, i) => (
+                                <div key={i} className="overflow-x-auto text-lg">
+                                  <TeX math={f} block />
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {t.examples?.map((ex, i) => (
+                          <div
+                            key={i}
+                            className="mt-6 rounded-lg border border-border/60 bg-background/40 p-5"
+                          >
+                            <div className="mb-3 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+                              ◇ Example {i + 1}
+                            </div>
+                            <div className="text-sm">
+                              <span className="text-muted-foreground">Problem:</span>{" "}
+                              <span className="text-foreground">{ex.problem}</span>
+                            </div>
+                            <ol className="mt-3 list-inside list-decimal space-y-1.5 text-sm text-foreground/90">
+                              {ex.steps.map((s, j) => (
+                                <li key={j}>
+                                  <TeX math={s} />
+                                </li>
+                              ))}
+                            </ol>
+                          </div>
+                        ))}
+                      </article>
+                    );
+                  })}
                 </div>
 
                 {inter && (

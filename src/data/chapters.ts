@@ -5,6 +5,7 @@ export type Example = {
 
 export type Topic = {
   title: string;
+  diagram?: string; // key into components/Diagrams
   body: string;
   formulas?: string[]; // KaTeX
   examples?: Example[];
@@ -29,6 +30,7 @@ export const chapters: Chapter[] = [
     topics: [
       {
         title: "Points, Lines, and Planes",
+        diagram: "points-lines-planes",
         body: "A point marks a location and has no size. A line is a straight one-dimensional figure extending infinitely in both directions. A plane is a flat two-dimensional surface extending infinitely. Two points determine a line; three non-collinear points determine a plane.",
         formulas: [
           "\\overleftrightarrow{AB} \\text{ denotes the line through } A \\text{ and } B",
@@ -47,6 +49,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Distance & Midpoint",
+        diagram: "distance-midpoint",
         body: "The distance between two points in the plane is found with the Pythagorean-based distance formula. The midpoint is the average of the coordinates.",
         formulas: [
           "d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}",
@@ -64,6 +67,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Angle Basics",
+        diagram: "angle-basics",
         body: "An angle is formed by two rays with a common endpoint (vertex). Angles are classified by measure: acute (<90°), right (=90°), obtuse (90°<θ<180°), straight (=180°). Complementary angles sum to 90°; supplementary angles sum to 180°.",
         formulas: [
           "\\text{Complementary: } \\alpha + \\beta = 90^\\circ",
@@ -97,6 +101,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Conditional Statements",
+        diagram: "conditional",
         body: "A conditional has the form ‘if p, then q’. Its converse swaps p and q. The inverse negates both. The contrapositive negates and swaps. A conditional and its contrapositive are logically equivalent.",
         formulas: [
           "\\text{Conditional: } p \\Rightarrow q",
@@ -135,6 +140,7 @@ export const chapters: Chapter[] = [
     topics: [
       {
         title: "Angles Formed by a Transversal",
+        diagram: "transversal",
         body: "When a transversal cuts two parallel lines, corresponding angles are congruent, alternate interior angles are congruent, alternate exterior angles are congruent, and consecutive (same-side) interior angles are supplementary.",
         formulas: [
           "\\text{Corresponding: } \\angle 1 \\cong \\angle 5",
@@ -154,6 +160,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Slopes of Parallel & Perpendicular Lines",
+        diagram: "slopes-pp",
         body: "Two non-vertical lines are parallel exactly when their slopes are equal. They are perpendicular exactly when the product of their slopes is −1 (i.e., slopes are negative reciprocals).",
         formulas: ["\\text{Parallel: } m_1 = m_2", "\\text{Perpendicular: } m_1 \\cdot m_2 = -1"],
         examples: [
@@ -168,6 +175,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Constructing Parallels & Perpendiculars",
+        diagram: "constructions",
         body: "Using compass and straightedge, a line parallel to a given line through an external point can be constructed by copying an angle. A perpendicular through a point uses two arcs of equal radius to bisect a segment.",
       },
     ],
@@ -181,6 +189,7 @@ export const chapters: Chapter[] = [
     topics: [
       {
         title: "Triangle Angle Sum & Exterior Angle",
+        diagram: "triangle-sum",
         body: "The three interior angles of any triangle sum to 180°. An exterior angle equals the sum of its two remote interior angles.",
         formulas: [
           "m\\angle A + m\\angle B + m\\angle C = 180^\\circ",
@@ -195,6 +204,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Congruence Postulates",
+        diagram: "congruence-postulates",
         body: "Two triangles are congruent when a matching set of parts matches: SSS, SAS, ASA, AAS, and HL (right triangles only). SSA is NOT a valid congruence criterion.",
         formulas: ["\\text{SSS, SAS, ASA, AAS, HL}"],
         examples: [
@@ -206,6 +216,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "CPCTC",
+        diagram: "cpctc",
         body: "Once two triangles are proven congruent, ‘Corresponding Parts of Congruent Triangles are Congruent’ can be cited to conclude any pair of corresponding sides or angles are equal.",
         examples: [
           {
@@ -216,6 +227,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Isosceles & Equilateral Triangles",
+        diagram: "isosceles",
         body: "In an isosceles triangle, the base angles (opposite the congruent sides) are congruent. An equilateral triangle has three 60° angles.",
         formulas: [
           "\\text{Isosceles: } AB = AC \\Rightarrow \\angle B \\cong \\angle C",
@@ -233,11 +245,13 @@ export const chapters: Chapter[] = [
     topics: [
       {
         title: "Similar Polygons",
+        diagram: "similar-polygons",
         body: "Two polygons are similar when corresponding angles are congruent and corresponding sides are proportional. The common ratio is the scale factor k.",
         formulas: ["\\dfrac{AB}{A'B'} = \\dfrac{BC}{B'C'} = \\dfrac{CA}{C'A'} = k"],
       },
       {
         title: "Triangle Similarity: AA, SAS~, SSS~",
+        diagram: "similar-triangles",
         body: "Two triangles are similar when: two pairs of angles are congruent (AA); an angle is congruent and its including sides are proportional (SAS~); or all three sides are proportional (SSS~).",
         examples: [
           {
@@ -248,6 +262,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Side-Splitter & Angle Bisector Theorems",
+        diagram: "side-splitter",
         body: "A line parallel to one side of a triangle divides the other two sides proportionally. An angle bisector of a triangle divides the opposite side in the ratio of the adjacent sides.",
         formulas: [
           "\\dfrac{AD}{DB} = \\dfrac{AE}{EC} \\quad (DE \\parallel BC)",
@@ -256,6 +271,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Ratios of Perimeters, Areas, Volumes",
+        diagram: "scale-ratios",
         body: "If two similar figures have scale factor k, their perimeters are in ratio k, their areas in ratio k², and their volumes in ratio k³.",
         formulas: ["\\text{Perimeters: } k", "\\text{Areas: } k^2", "\\text{Volumes: } k^3"],
       },
@@ -270,6 +286,7 @@ export const chapters: Chapter[] = [
     topics: [
       {
         title: "Pythagorean Theorem & Converse",
+        diagram: "pythagorean",
         body: "In any right triangle with legs a, b and hypotenuse c, a² + b² = c². Its converse: if a² + b² = c² for a triangle's sides, then the triangle is right.",
         formulas: ["a^2 + b^2 = c^2"],
         examples: [
@@ -281,6 +298,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Special Right Triangles",
+        diagram: "special-right",
         body: "A 45-45-90 triangle has legs equal and hypotenuse leg·√2. A 30-60-90 triangle has sides in the ratio 1 : √3 : 2.",
         formulas: [
           "45\\text{-}45\\text{-}90:\\ 1 : 1 : \\sqrt{2}",
@@ -295,6 +313,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Trigonometric Ratios (SOH-CAH-TOA)",
+        diagram: "trig",
         body: "For an acute angle θ in a right triangle: sine is opposite/hypotenuse, cosine is adjacent/hypotenuse, tangent is opposite/adjacent.",
         formulas: [
           "\\sin\\theta = \\dfrac{\\text{opp}}{\\text{hyp}}",
@@ -310,6 +329,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Angles of Elevation & Depression",
+        diagram: "elevation",
         body: "An angle of elevation is measured up from the horizontal; an angle of depression, down. In a diagram the two are alternate interior angles and therefore equal.",
         examples: [
           {
@@ -329,6 +349,7 @@ export const chapters: Chapter[] = [
     topics: [
       {
         title: "Polygon Angle Sums",
+        diagram: "polygon-angles",
         body: "The sum of interior angles of an n-gon is (n − 2)·180°. The sum of exterior angles (one per vertex) is always 360°.",
         formulas: ["S_{\\text{int}} = (n - 2)\\cdot 180^\\circ", "S_{\\text{ext}} = 360^\\circ"],
         examples: [
@@ -340,14 +361,17 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Parallelograms",
+        diagram: "parallelogram",
         body: "In a parallelogram both pairs of opposite sides are parallel and congruent, opposite angles are congruent, consecutive angles are supplementary, and the diagonals bisect each other.",
       },
       {
         title: "Rectangles, Rhombuses, Squares",
+        diagram: "special-parallelograms",
         body: "A rectangle is a parallelogram with four right angles (diagonals are congruent). A rhombus is a parallelogram with four congruent sides (diagonals are perpendicular and bisect the vertex angles). A square is both — every property of rectangles and rhombuses holds.",
       },
       {
         title: "Trapezoids & Kites",
+        diagram: "trapezoid-kite",
         body: "A trapezoid has exactly one pair of parallel sides (the bases). The midsegment is parallel to the bases and equal to their average. A kite has two pairs of consecutive congruent sides; its diagonals are perpendicular.",
         formulas: ["\\text{Midsegment: } m = \\dfrac{b_1 + b_2}{2}"],
       },
@@ -362,6 +386,7 @@ export const chapters: Chapter[] = [
     topics: [
       {
         title: "Circumference & Arc Length",
+        diagram: "arc-length",
         body: "The circumference of a circle of radius r is 2πr. An arc's length is a fraction of that, proportional to its central angle.",
         formulas: [
           "C = 2\\pi r",
@@ -376,6 +401,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Central & Inscribed Angles",
+        diagram: "central-inscribed",
         body: "A central angle equals its intercepted arc. An inscribed angle equals half its intercepted arc. Inscribed angles that intercept the same arc are congruent, and an inscribed angle in a semicircle is a right angle.",
         formulas: [
           "\\text{Central: } m\\angle = m\\overset{\\frown}{AB}",
@@ -384,6 +410,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Chords, Tangents, and Secants",
+        diagram: "chord-tangent-secant",
         body: "A tangent is perpendicular to the radius drawn to the point of tangency. Two tangents from an external point are congruent. Products of chord/secant segments follow the intersecting-chords and secant-tangent power rules.",
         formulas: [
           "\\text{Chords: } AE \\cdot EB = CE \\cdot ED",
@@ -392,6 +419,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Equation of a Circle",
+        diagram: "circle-equation",
         body: "A circle with center (h, k) and radius r has the standard equation shown. Complete the square to convert general form to standard form.",
         formulas: ["(x - h)^2 + (y - k)^2 = r^2"],
         examples: [
@@ -416,6 +444,7 @@ export const chapters: Chapter[] = [
     topics: [
       {
         title: "Triangles & Parallelograms",
+        diagram: "parallelogram-area",
         body: "The area of a triangle is one-half base times height. A parallelogram's area is base times height (the perpendicular distance between the parallel sides).",
         formulas: ["A_{\\triangle} = \\tfrac{1}{2}\\,b\\,h", "A_{\\square} = b\\,h"],
         examples: [
@@ -427,6 +456,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Trapezoids & Regular Polygons",
+        diagram: "trapezoid-regular",
         body: "A trapezoid's area uses the average of the bases times the height. A regular polygon's area uses one-half its apothem times its perimeter.",
         formulas: [
           "A_{\\text{trap}} = \\tfrac{1}{2}(b_1 + b_2)h",
@@ -435,6 +465,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Circles & Sectors",
+        diagram: "sector-area",
         body: "A circle of radius r has area πr². A sector is a fraction of that area proportional to its central angle.",
         formulas: [
           "A_{\\circ} = \\pi r^2",
@@ -449,6 +480,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Composite Figures",
+        diagram: "composite",
         body: "For irregular shapes, decompose into familiar pieces (triangles, rectangles, circles), add or subtract areas as needed, and combine.",
       },
     ],
@@ -462,6 +494,7 @@ export const chapters: Chapter[] = [
     topics: [
       {
         title: "Prisms & Cylinders",
+        diagram: "prism-cylinder",
         body: "For any right prism or cylinder, the volume is base area times height. The lateral surface area is the perimeter (or circumference) of the base times the height.",
         formulas: [
           "V_{\\text{prism}} = B\\,h",
@@ -477,6 +510,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Pyramids & Cones",
+        diagram: "pyramid-cone",
         body: "A pyramid or cone has one-third the volume of the prism or cylinder with the same base and height. Slant height ℓ is used for lateral surface area of a cone.",
         formulas: [
           "V_{\\text{pyr}} = \\tfrac{1}{3} B h",
@@ -486,6 +520,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Spheres",
+        diagram: "sphere",
         body: "A sphere of radius r has surface area 4πr² and volume (4/3)πr³.",
         formulas: ["SA_{\\odot} = 4\\pi r^2", "V_{\\odot} = \\tfrac{4}{3}\\pi r^3"],
         examples: [
@@ -497,6 +532,7 @@ export const chapters: Chapter[] = [
       },
       {
         title: "Similar Solids",
+        diagram: "similar-solids",
         body: "If two similar solids have linear scale factor k, their surface areas are in ratio k² and their volumes in ratio k³.",
         formulas: ["\\dfrac{SA_1}{SA_2} = k^2", "\\dfrac{V_1}{V_2} = k^3"],
       },
