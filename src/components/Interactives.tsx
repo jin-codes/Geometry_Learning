@@ -78,7 +78,7 @@ export function DistanceInteractive() {
   const d = Math.hypot(x2 - x1, y2 - y1);
   return (
     <Shell
-      formula="d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}"
+      formula={"d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}"}
       substituted={`d = \\sqrt{(${x2} - ${x1})^2 + (${y2} - ${y1})^2}`}
       result={`d = ${Number(d.toFixed(4))}`}
     >
@@ -97,7 +97,7 @@ export function AngleSumInteractive() {
   const c = 180 - a - b;
   return (
     <Shell
-      formula="m\\angle A + m\\angle B + m\\angle C = 180^\\circ"
+      formula={"m\\angle A + m\\angle B + m\\angle C = 180^\\circ"}
       substituted={`m\\angle C = 180 - ${a} - ${b}`}
       result={`m\\angle C = ${c}^\\circ`}
     >
@@ -113,7 +113,7 @@ export function PerpSlopeInteractive() {
   const perp = m === 0 ? NaN : -1 / m;
   return (
     <Shell
-      formula="m_1 \\cdot m_2 = -1"
+      formula={"m_1 \\cdot m_2 = -1"}
       substituted={`m_2 = -\\dfrac{1}{${m}}`}
       result={
         Number.isFinite(perp)
@@ -137,7 +137,7 @@ export function CongruenceInteractive() {
   const ok = ab === de && ac === df && angA === angD;
   return (
     <Shell
-      formula="\\text{SAS: } AB = DE,\\ \\angle A = \\angle D,\\ AC = DF"
+      formula={"\\text{SAS: } AB = DE,\\ \\angle A = \\angle D,\\ AC = DF"}
       substituted={`AB=${ab},\\ DE=${de},\\ \\angle A=${angA}^\\circ,\\ \\angle D=${angD}^\\circ,\\ AC=${ac},\\ DF=${df}`}
       result={ok ? "\\triangle ABC \\cong \\triangle DEF" : "\\text{not congruent by SAS}"}
     >
@@ -160,7 +160,7 @@ export function ScaleFactorInteractive() {
   const mapped = side * k;
   return (
     <Shell
-      formula="k = \\dfrac{A'B'}{AB},\\quad E'F' = k \\cdot EF"
+      formula={"k = \\dfrac{A'B'}{AB},\\quad E'F' = k \\cdot EF"}
       substituted={`k = ${b}/${a} = ${Number(k.toFixed(4))},\\ E'F' = ${side} \\cdot ${Number(k.toFixed(4))}`}
       result={`E'F' = ${Number(mapped.toFixed(4))}`}
     >
@@ -182,7 +182,7 @@ export function RightTriangleInteractive() {
   const theta = (Math.atan2(a, b) * 180) / Math.PI;
   return (
     <Shell
-      formula="a^2 + b^2 = c^2,\\ \\ \\tan\\theta = \\tfrac{a}{b}"
+      formula={"a^2 + b^2 = c^2,\\ \\ \\tan\\theta = \\tfrac{a}{b}"}
       substituted={`c = \\sqrt{${a}^2 + ${b}^2},\\ \\tan\\theta = ${a}/${b}`}
       result={`c = ${Number(c.toFixed(4))},\\ \\theta \\approx ${Number(theta.toFixed(2))}^\\circ,\\ \\sin\\theta = ${Number(sinT.toFixed(3))},\\ \\cos\\theta = ${Number(cosT.toFixed(3))},\\ \\tan\\theta = ${Number(tanT.toFixed(3))}`}
     >
@@ -200,7 +200,7 @@ export function PolygonAngleInteractive() {
   const each = total / safe;
   return (
     <Shell
-      formula="S = (n - 2)\\cdot 180^\\circ"
+      formula={"S = (n - 2)\\cdot 180^\\circ"}
       substituted={`S = (${safe} - 2)\\cdot 180`}
       result={`S = ${total}^\\circ,\\ \\text{each (regular)} = ${Number(each.toFixed(3))}^\\circ`}
     >
@@ -242,7 +242,7 @@ export function SectorInteractive() {
   const area = (theta / 360) * Math.PI * r * r;
   return (
     <Shell
-      formula="A_{\\text{sector}} = \\dfrac{\\theta}{360^\\circ}\\,\\pi r^2"
+      formula={"A_{\\text{sector}} = \\dfrac{\\theta}{360^\\circ}\\,\\pi r^2"}
       substituted={`A = \\dfrac{${theta}}{360}\\cdot \\pi (${r})^2`}
       result={`A \\approx ${Number(area.toFixed(4))}`}
     >
@@ -259,7 +259,7 @@ export function SphereInteractive() {
   const sa = 4 * Math.PI * r * r;
   return (
     <Shell
-      formula="V = \\tfrac{4}{3}\\pi r^3,\\ \\ SA = 4\\pi r^2"
+      formula={"V = \\tfrac{4}{3}\\pi r^3,\\ \\ SA = 4\\pi r^2"}
       substituted={`V = \\tfrac{4}{3}\\pi (${r})^3,\\ SA = 4\\pi (${r})^2`}
       result={`V \\approx ${Number(v.toFixed(4))},\\ SA \\approx ${Number(sa.toFixed(4))}`}
     >
