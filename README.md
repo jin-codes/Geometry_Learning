@@ -18,8 +18,17 @@ Studying Geometry often means flipping between a textbook and a search bar just 
 - **KaTeX 수식 렌더링**: 모든 공식이 교과서처럼 선명하게 표시됩니다.
 - **실시간 검색**: 주제, 정리, 키워드로 즉시 필터링합니다.
 - **풀이 예제**: 문제와 단계별 풀이를 함께 제공합니다.
+- **도형 그림**: 대부분의 개념에 개념을 설명하는 SVG 도형이 함께 표시됩니다.
 - **인터랙티브 계산기**: 값을 바꿔 가며 결과를 바로 확인합니다.
 - **다크 테마 & 반응형 UI**: 데스크톱과 모바일 모두에서 읽기 편합니다.
+
+## 스크린샷 · Screenshots
+
+![메인 화면 · Home](docs/screenshot-home.png)
+
+| 도형 그림 · Diagrams | 인터랙티브 · Interactive |
+|---|---|
+| ![Diagrams](docs/screenshot-diagrams.png) | ![Interactive](docs/screenshot-interactive.png) |
 
 ## 커리큘럼 · Curriculum
 
