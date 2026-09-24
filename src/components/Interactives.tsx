@@ -219,11 +219,7 @@ export function CircleInteractive() {
   const lhs = (x - h) ** 2 + (y - k) ** 2;
   const rhs = r * r;
   const state =
-    lhs < rhs
-      ? "\\text{inside}"
-      : lhs === rhs
-        ? "\\text{on the circle}"
-        : "\\text{outside}";
+    lhs < rhs ? "\\text{inside}" : lhs === rhs ? "\\text{on the circle}" : "\\text{outside}";
   return (
     <Shell
       formula="(x - h)^2 + (y - k)^2 = r^2"
@@ -273,14 +269,55 @@ export function SphereInteractive() {
 }
 
 export const interactives = [
-  { title: "Distance Between Two Points", blurb: "Compute the distance between (x₁, y₁) and (x₂, y₂) with the Pythagorean-based distance formula.", Comp: DistanceInteractive },
-  { title: "Triangle Angle Sum", blurb: "Given two angles of a triangle, find the third using the 180° sum.", Comp: AngleSumInteractive },
-  { title: "Perpendicular Slope", blurb: "Enter a slope; get the perpendicular (negative reciprocal) slope.", Comp: PerpSlopeInteractive },
-  { title: "SAS Congruence Check", blurb: "Test two triangles for congruence by Side–Angle–Side.", Comp: CongruenceInteractive },
-  { title: "Similarity Scale Factor", blurb: "Compute the scale factor between similar triangles and map a side length.", Comp: ScaleFactorInteractive },
-  { title: "Right-Triangle Trig", blurb: "Enter the legs; get the hypotenuse and every basic trig ratio.", Comp: RightTriangleInteractive },
-  { title: "Polygon Angle Sum", blurb: "For an n-gon, compute the total interior angle sum and each regular angle.", Comp: PolygonAngleInteractive },
-  { title: "Point-on-Circle Checker", blurb: "Given a circle (h, k, r), classify a point as inside, on, or outside.", Comp: CircleInteractive },
-  { title: "Sector Area", blurb: "Compute the area of a circular sector from θ and r.", Comp: SectorInteractive },
-  { title: "Sphere Volume & Surface Area", blurb: "Compute V = (4/3)πr³ and SA = 4πr² for a sphere.", Comp: SphereInteractive },
+  {
+    title: "Distance Between Two Points",
+    blurb:
+      "Compute the distance between (x₁, y₁) and (x₂, y₂) with the Pythagorean-based distance formula.",
+    Comp: DistanceInteractive,
+  },
+  {
+    title: "Triangle Angle Sum",
+    blurb: "Given two angles of a triangle, find the third using the 180° sum.",
+    Comp: AngleSumInteractive,
+  },
+  {
+    title: "Perpendicular Slope",
+    blurb: "Enter a slope; get the perpendicular (negative reciprocal) slope.",
+    Comp: PerpSlopeInteractive,
+  },
+  {
+    title: "SAS Congruence Check",
+    blurb: "Test two triangles for congruence by Side–Angle–Side.",
+    Comp: CongruenceInteractive,
+  },
+  {
+    title: "Similarity Scale Factor",
+    blurb: "Compute the scale factor between similar triangles and map a side length.",
+    Comp: ScaleFactorInteractive,
+  },
+  {
+    title: "Right-Triangle Trig",
+    blurb: "Enter the legs; get the hypotenuse and every basic trig ratio.",
+    Comp: RightTriangleInteractive,
+  },
+  {
+    title: "Polygon Angle Sum",
+    blurb: "For an n-gon, compute the total interior angle sum and each regular angle.",
+    Comp: PolygonAngleInteractive,
+  },
+  {
+    title: "Point-on-Circle Checker",
+    blurb: "Given a circle (h, k, r), classify a point as inside, on, or outside.",
+    Comp: CircleInteractive,
+  },
+  {
+    title: "Sector Area",
+    blurb: "Compute the area of a circular sector from θ and r.",
+    Comp: SectorInteractive,
+  },
+  {
+    title: "Sphere Volume & Surface Area",
+    blurb: "Compute V = (4/3)πr³ and SA = 4πr² for a sphere.",
+    Comp: SphereInteractive,
+  },
 ];

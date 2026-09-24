@@ -34,7 +34,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -92,9 +92,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Geometry Reference — 10th Grade" },
-      { name: "twitter:description", content: "The full 10th-grade Geometry curriculum, distilled. Ten chapters, every core theorem and formula, rendered with KaTeX in a dark study reference." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/593c2154-35a0-4c2e-a116-153d2186b823/id-preview-4ce2270f--182466c0-bcb6-4cb7-a142-cc756ba20219.lovable.app-1783848839620.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/593c2154-35a0-4c2e-a116-153d2186b823/id-preview-4ce2270f--182466c0-bcb6-4cb7-a142-cc756ba20219.lovable.app-1783848839620.png" },
+      {
+        name: "twitter:description",
+        content:
+          "The full 10th-grade Geometry curriculum, distilled. Ten chapters, every core theorem and formula, rendered with KaTeX in a dark study reference.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/593c2154-35a0-4c2e-a116-153d2186b823/id-preview-4ce2270f--182466c0-bcb6-4cb7-a142-cc756ba20219.lovable.app-1783848839620.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/593c2154-35a0-4c2e-a116-153d2186b823/id-preview-4ce2270f--182466c0-bcb6-4cb7-a142-cc756ba20219.lovable.app-1783848839620.png",
+      },
     ],
     links: [
       {

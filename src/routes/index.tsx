@@ -100,19 +100,11 @@ function Index() {
                 key={c.id}
                 href={`#${c.id}`}
                 className={`mb-1 flex gap-3 rounded-md px-3 py-2.5 text-sm transition-colors ${
-                  isActive
-                    ? "bg-card/80 ring-1 ring-primary/50"
-                    : "hover:bg-card/50"
+                  isActive ? "bg-card/80 ring-1 ring-primary/50" : "hover:bg-card/50"
                 }`}
               >
-                <span className={`font-mono text-xs ${accentClass[c.accent]}`}>
-                  {c.num}
-                </span>
-                <span
-                  className={
-                    isActive ? "text-foreground" : "text-muted-foreground"
-                  }
-                >
+                <span className={`font-mono text-xs ${accentClass[c.accent]}`}>{c.num}</span>
+                <span className={isActive ? "text-foreground" : "text-muted-foreground"}>
                   {c.title}
                 </span>
               </a>
@@ -154,13 +146,11 @@ function Index() {
             // STUDY REFERENCE
           </div>
           <h1 className="mt-4 max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-            The full <span className="text-primary">Geometry</span> curriculum,
-            distilled.
+            The full <span className="text-primary">Geometry</span> curriculum, distilled.
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Ten chapters, every core theorem and formula, rendered with KaTeX.
-            Built as a clean, dark-mode reference for studying or revisiting
-            any topic on demand.
+            Ten chapters, every core theorem and formula, rendered with KaTeX. Built as a clean,
+            dark-mode reference for studying or revisiting any topic on demand.
           </p>
           <div className="mt-8 flex flex-wrap gap-2">
             {chapters.map((c) => (
@@ -184,11 +174,7 @@ function Index() {
             return (
               <section key={c.id} id={c.id} className="scroll-mt-24">
                 <div className="mb-8 flex items-baseline gap-6 border-b border-border/70 pb-4">
-                  <span
-                    className={`font-mono text-sm ${accentClass[c.accent]}`}
-                  >
-                    {c.num}
-                  </span>
+                  <span className={`font-mono text-sm ${accentClass[c.accent]}`}>{c.num}</span>
                   <h2
                     className={`text-3xl font-semibold tracking-tight sm:text-4xl ${accentClass[c.accent]}`}
                   >
@@ -235,12 +221,8 @@ function Index() {
                             ◇ Example {i + 1}
                           </div>
                           <div className="text-sm">
-                            <span className="text-muted-foreground">
-                              Problem:
-                            </span>{" "}
-                            <span className="text-foreground">
-                              {ex.problem}
-                            </span>
+                            <span className="text-muted-foreground">Problem:</span>{" "}
+                            <span className="text-foreground">{ex.problem}</span>
                           </div>
                           <ol className="mt-3 list-inside list-decimal space-y-1.5 text-sm text-foreground/90">
                             {ex.steps.map((s, j) => (
@@ -260,9 +242,7 @@ function Index() {
                     <div className="mb-1 font-mono text-[11px] uppercase tracking-widest text-primary">
                       Interactive · {inter.title}
                     </div>
-                    <p className="mb-6 max-w-2xl text-sm text-muted-foreground">
-                      {inter.blurb}
-                    </p>
+                    <p className="mb-6 max-w-2xl text-sm text-muted-foreground">{inter.blurb}</p>
                     <inter.Comp />
                   </div>
                 )}

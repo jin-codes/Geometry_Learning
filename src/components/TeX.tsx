@@ -20,10 +20,5 @@ export function TeX({
     [math, block],
   );
   const Tag = block ? "div" : "span";
-  return (
-    <Tag
-      className={className}
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
-  );
+  return <Tag className={className} dangerouslySetInnerHTML={{ __html: html }} />;
 }
