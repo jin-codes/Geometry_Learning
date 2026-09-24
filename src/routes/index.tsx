@@ -247,7 +247,7 @@ function Index() {
                             <ol className="mt-3 list-inside list-decimal space-y-1.5 text-sm text-foreground/90">
                               {ex.steps.map((s, j) => (
                                 <li key={j}>
-                                  <TeX math={s} />
+                                  {s.includes("\\") || /[\^_]/.test(s) ? <TeX math={s} /> : s}
                                 </li>
                               ))}
                             </ol>

@@ -307,7 +307,7 @@ export const chapters: Chapter[] = [
         examples: [
           {
             problem: "Legs of a 45-45-90 have length 7. Hypotenuse?",
-            steps: ["Hypotenuse = 7\\sqrt{2}"],
+            steps: ["\\text{Hypotenuse} = 7\\sqrt{2}"],
           },
         ],
       },
